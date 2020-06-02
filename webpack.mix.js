@@ -16,6 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
    .sourceMaps(); // Fix issue with souceMap failed in Chrome Console;
 
 mix.browserSync({
-    proxy: 'https://blog.dev',
+    proxy: 'https://blogspa.dev',
     open: false
 });
+
+mix.disableNotifications();

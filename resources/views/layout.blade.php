@@ -48,7 +48,8 @@
 				</ul>
 			</div>
 		</footer>
-	</section>
+    </section>
+    <script src="{{ mix('js/app.js') }}"></script>
     @stack('scripts')
     <script src="{{ asset('js/toggle-menu.js') }}"></script>
 </body>
