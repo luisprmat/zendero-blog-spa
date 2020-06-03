@@ -24,22 +24,22 @@
 
                     <ul class="container-flex list-unstyled">
                         <li>
-                            <router-link to="/" class="c-gris-2 text-uppercase">
+                            <router-link :to="{name: 'home'}" class="c-gris-2 text-uppercase">
                                 Inicio
                             </router-link>
                         </li>
                         <li>
-                            <router-link to="/nosotros" class="c-gris-2 text-uppercase">
+                            <router-link :to="{name: 'about'}" class="c-gris-2 text-uppercase">
                                 Nosotros
                             </router-link>
                         </li>
                         <li>
-                            <router-link to="/archivo" class="c-gris-2 text-uppercase">
+                            <router-link :to="{name: 'archive'}" class="c-gris-2 text-uppercase">
                                 Archivo
                             </router-link>
                         </li>
                         <li>
-                            <router-link to="/contacto" class="c-gris-2 text-uppercase">
+                            <router-link :to="{name: 'contact'}" class="c-gris-2 text-uppercase">
                                 Contacto
                             </router-link>
                         </li>
