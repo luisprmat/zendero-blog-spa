@@ -9,6 +9,10 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Router from 'vue-router';
+import Home from './views/Home';
+import About from './views/About';
+import Archive from './views/Archive';
+import Contact from './views/Contact';
 
 Vue.use(Router);
 
@@ -16,27 +20,19 @@ let router = new Router({
     routes: [
         {
             path: '/',
-            component: {
-                template: '<div>Este es el home</div>'
-            }
+            component: Home
         },
         {
             path: '/nosotros',
-            component: {
-                template: '<div>Información de nosotros</div>'
-            }
+            component: About
         },
         {
             path: '/archivo',
-            component: {
-                template: '<div>Este es el archivo</div>'
-            }
+            component: Archive
         },
         {
             path: '/contacto',
-            component: {
-                template: '<div>Este es la página de contactos</div>'
-            }
+            component: Contact
         }
     ],
     linkExactActiveClass: 'active'
