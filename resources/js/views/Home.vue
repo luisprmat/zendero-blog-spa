@@ -8,32 +8,17 @@
             <!-- @include($post->viewType('home')) -->
 
             <div class="content-post">
-                <!-- @include('posts.header') -->
-                <header class="container-flex space-between">
-                    <div class="date">
-                        <span class="c-gris">
-                            {{ post.published_date }} / {{ post.owner.name }}
-                        </span>
-                    </div>
-                    <div class="post-category">
-                        <span class="category">
-                            <!-- <a href="{{ route('categories.show', $post->category) }}">
-                                {{ optional($post->category)->name }}
-                            </a> -->
-                            <a href="#">{{ post.category.name }}</a>
-                        </span>
-                    </div>
-                </header>
 
-                <h1 v-text="post.title"></h1>
-
-                <div class="divider"></div>
+                <post-header :post="post"></post-header>
 
                 <p v-html="post.excerpt"></p>
                 <footer class="container-flex space-between">
                     <div class="read-more">
-                        <!-- <a href="{{ route('posts.show', $post) }}" class="text-uppercase c-green">leer más</a> -->
-                        <a href="#" class="text-uppercase c-green">leer más</a>
+                        <router-link :to="{name: 'post_show', params: {url: post.url}}"
+                            class="text-uppercase c-green"
+                        >
+                            leer más
+                        </router-link>
                     </div>
 
                     <!-- @include('posts.tags') -->

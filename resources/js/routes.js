@@ -5,6 +5,7 @@ import Home from './views/Home';
 import About from './views/About';
 import Archive from './views/Archive';
 import Contact from './views/Contact';
+import PostShow from './views/PostShow';
 import NotFound from './views/404';
 
 Vue.use(Router);
@@ -30,6 +31,11 @@ export default new Router({
             path: '/contacto',
             name: 'contact',
             component: Contact
+        },
+        {
+            path: '/blog/:url',
+            name: 'post_show',
+            component: PostShow
         },
         {
             path: '*',
