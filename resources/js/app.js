@@ -38,7 +38,8 @@ let router = new Router({
                 template: '<div>Este es la página de contactos</div>'
             }
         }
-    ]
+    ],
+    linkExactActiveClass: 'active'
 });
 
 /**
