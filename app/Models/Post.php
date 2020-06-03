@@ -17,6 +17,8 @@ class Post extends Model
         'published_at' => 'datetime',
     ];
 
+    protected $appends = ['published_date'];
+
     public function getRouteKeyName()
     {
         return 'url';
@@ -123,6 +125,11 @@ class Post extends Model
         });
 
         return $this->tags()->sync($tagIds);
+    }
+
+    public function getPublishedDateAttribute()
+    {
+        return optional($this->published_at)->format('M d');
     }
 
     public function viewType($home = '')
