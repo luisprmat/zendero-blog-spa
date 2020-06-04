@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\MessageReceived;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,4 +52,3 @@ Route::middleware('auth')
 });
 
 Auth::routes(['register' => false]);
-
