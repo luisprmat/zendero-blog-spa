@@ -10,13 +10,18 @@
                 <div class="image-w-text" v-html="post.body"></div>
 
                 <footer class="container-flex space-between">
-                    <!-- @include('partials.social-links', ['description' => $post->title])
-                    @include('posts.tags') -->
+                    <social-links :description="post.title"></social-links>
+
+                    <div class="tags container-flex">
+                        <span class="tag c-gris" :key="tag.id" v-for="tag in post.tags">
+                            <tag-link :tag="tag"></tag-link>
+                        </span>
+                    </div>
                 </footer>
                 <div class="comments">
                     <div class="divider"></div>
                     <disqus-comments></disqus-comments>
-                </div><!-- .comments -->
+                </div>
             </div>
         </article>
     </section>
