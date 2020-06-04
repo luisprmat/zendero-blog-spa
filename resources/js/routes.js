@@ -7,6 +7,7 @@ import Archive from './views/Archive';
 import Contact from './views/Contact';
 import PostShow from './views/PostShow';
 import CategoryPosts from './views/CategoryPosts';
+import TagsPosts from './views/TagsPosts';
 import NotFound from './views/404';
 
 Vue.use(Router);
@@ -36,12 +37,20 @@ export default new Router({
         {
             path: '/blog/:url',
             name: 'post_show',
-            component: PostShow
+            component: PostShow,
+            props: true
         },
         {
             path: '/categorias/:category',
             name: 'category_posts',
-            component: CategoryPosts
+            component: CategoryPosts,
+            props: true
+        },
+        {
+            path: '/etiquetas/:tag',
+            name: 'tags_posts',
+            component: TagsPosts,
+            props: true
         },
         {
             path: '*',
