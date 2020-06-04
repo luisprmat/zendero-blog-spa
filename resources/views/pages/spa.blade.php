@@ -34,6 +34,7 @@
                 <div class="container">
                     <figure class="logo"><img src="/img/logo.png" alt=""></figure>
                     <nav>
+                        {{-- <nav-bar></nav-bar> TODO: Reuse component--}}
                         <ul class="container-flex space-center list-unstyled">
                             @include('partials.nav-menu')
                         </ul>
