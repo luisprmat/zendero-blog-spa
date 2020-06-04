@@ -10,11 +10,7 @@
             <p v-html="post.excerpt"></p>
             <footer class="container-flex space-between">
                 <div class="read-more">
-                    <router-link :to="{name: 'post_show', params: {url: post.url}}"
-                        class="text-uppercase c-green"
-                    >
-                        leer más
-                    </router-link>
+                    <post-link class="text-uppercase c-green" :post="post">leer más</post-link>
                 </div>
 
                 <!-- @include('posts.tags') -->

@@ -8,35 +8,33 @@
                 <div class="authors-categories">
                     <h3 class="text-capitalize">Autores</h3>
                     <ul class="list-unstyled">
-                        <!-- @foreach ($authors as $author) -->
-                            <!-- <li>{{ $author->name }}</li> -->
-                        <!-- @endforeach -->
+                        <li v-for="author in authors" v-text="author.name" :key="author.id"></li>
                     </ul>
                     <h3 class="text-capitalize">categorías</h3>
                     <ul class="list-unstyled">
-                        <!-- @foreach ($categories as $category) -->
-                            <li class="text-capitalize">
-                                <!-- <a href="{{ route('categories.show', $category) }}"> -->
-                                    <!-- {{ $category->name }} -->
-                                <!-- </a> -->
-                            </li>
-                        <!-- @endforeach -->
+                        <li class="text-capitalize" v-for="category in categories" :key="category.id">
+                            <category-link :category="category"></category-link>
+                        </li>
                     </ul>
                 </div>
                 <div class="latest-posts">
                     <h3 class="text-capitalize">últimas publicaciones</h3>
-                    <!-- @foreach ($posts as $post) -->
-                        <!-- <p><a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a></p> -->
-                    <!-- @endforeach -->
+
+                    <p v-for="post in posts" :key="post.id">
+                        <post-link :post="post">{{ post.title }}</post-link>
+                    </p>
+
                     <h3 class="text-capitalize">publicaciones por mes</h3>
+
                     <ul class="list-unstyled">
-                        <!-- @foreach($archive as $date) -->
-                            <li class="text-capitalize">
-                                <!-- <a href="{{ route('pages.home', ['month' => $date->month, 'year' => $date->year]) }}"> -->
-                                    <!-- {{ $date->monthname }} {{ $date->year }} ({{ $date->posts }}) -->
-                                <!-- </a> -->
-                            </li>
-                        <!-- @endforeach -->
+                        <li class="text-capitalize">
+                            <!-- <a href="{{ route('pages.home', ['month' => $date->month, 'year' => $date->year]) }}"> -->
+                                <!-- {{ $date->monthname }} {{ $date->year }} ({{ $date->posts }}) -->
+                            <!-- </a> -->
+                        </li>
+                        <li class="text-capitalize" v-for="(date, index) in archive" :key="index" >
+                            {{ date.monthname }} {{ date.year }} ({{ date.posts }})
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -46,6 +44,25 @@
 
 <script>
     export default {
-
+        data() {
+            return {
+                authors: [],
+                categories: [],
+                posts: [],
+                archive: []
+            }
+        },
+        mounted() {
+            axios.get('/api/archivo')
+                .then(res => {
+                    this.authors = res.data.authors
+                    this.categories = res.data.categories
+                    this.posts = res.data.posts
+                    this.archive = res.data.archive
+                })
+                .catch(err => {
+                    console.log(err.response.data)
+                })
+        }
     }
 </script>
