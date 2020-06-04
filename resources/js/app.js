@@ -21,6 +21,8 @@ import router from './routes';
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+// require('vue2-animate/dist/vue2-animate.min.css');
+
 Vue.component('post-header', require('./components/PostHeader').default);
 Vue.component('posts-list', require('./components/PostsList').default);
 Vue.component('post-list-item', require('./components/PostListItem').default);

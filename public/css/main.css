@@ -1052,6 +1052,34 @@ a.btn-bar {
   overflow: hidden;
 }
 
+.page-wrapper {
+  min-height: 100vh;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateY(800px);
+  opacity: 0;
+}
+
 @media (max-width: 480px) {
   figure.logo {
     margin: 1em 0;

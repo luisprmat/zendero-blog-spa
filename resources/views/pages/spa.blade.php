@@ -24,11 +24,11 @@
         </header>
 
         {{-- content --}}
-        <router-view :key="$route.fullPath"></router-view>
-
-        {{-- {{ $posts->appends(request()->all())->links('partials.pagination') }} --}}
-
-
+        <div class="page-wrapper">
+            <transition name="slide-fade" mode="out-in">
+                <router-view :key="$route.fullPath"></router-view>
+            </transition>
+        </div>
         <section class="footer">
             <footer>
                 <div class="container">
