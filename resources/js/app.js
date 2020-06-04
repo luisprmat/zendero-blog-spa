@@ -27,6 +27,7 @@ Vue.component('post-list-item', require('./components/PostListItem').default);
 Vue.component('nav-bar', require('./components/NavBar').default);
 Vue.component('category-link', require('./components/CategoryLink').default);
 Vue.component('post-link', require('./components/PostLink').default);
+Vue.component('disqus-comments', require('./components/DisqusComments').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
